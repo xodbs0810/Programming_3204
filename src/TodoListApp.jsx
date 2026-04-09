@@ -1,4 +1,8 @@
+// https://programming-3204.s2445.workers.dev/
 import "./todolist.css"
+import Button from "./components/Button";
+import Checkbox from "./components/Checkbox";
+import TodoItemEmpty from "./components/TodoItemEmpty.jsx";
 
 function TodoListApp() {
   return (
@@ -9,11 +13,9 @@ function TodoListApp() {
     <button type="submit" className="todo__button todo__button--add">Add</button>
     </form>
     <ul className="todo_list">
-      <li className="todo__item todo__item--empty">
-        <p>할 일 없음</p>
-     </li>
+      <TodoItemEmpty />
       <li className="todo__item todo__label--complete">
-        <input type="checkbox" className="todo__check" name="" id="chk-1" />
+        <input type="checkbox" className="todo__check" name="" id="1" />
         <label htmlFor="chk-1" className="todo__label" >옷 싸기</label>
         <button className="todo__button todo__button--edit">🅾️</button>
         <button className="todo__button todo__button--delete">❌</button>
