@@ -5,7 +5,9 @@ export default function TodoAdder({ onAdd: addTodo }) { //const {addTodo} = prop
     const [inputTodo, setInputTodo] = useState('');
     const handlesubmit = (event) => {
         event.preventDefault(); //기본 동작 막기 
-        addTodo(inputTodo); //input에 있는 text value를 할일 내용으로 추가 
+        if(!inputTodo.trim()) return; //input이 비어있으면 추가하지 않음
+        addTodo(inputTodo.trim()); //input에 있는 text value를 할일 내용으로 추가 
+        setInputTodo(''); //input 초기화
 
         return (
             <form className="todo__form" onSubmit={handlesubmit}>
