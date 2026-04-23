@@ -1,8 +1,8 @@
 export default function Checkbox(props){
-    const { children, ...rest } = props;
+    const { children, id, ...rest } = props;
     return(
         <>
-       <input {...rest} id={`chk-${id}`}/>
+       <input type="checkbox" className="todo__check" id={`chk-${id}`} {...rest} />
        <label htmlFor={`chk-${id}`} className="todo_label">{children}</label>
        </>
     )
